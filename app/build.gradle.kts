@@ -50,7 +50,7 @@ dependencies {
 
     //Fragments
     val fragmentVersion = "1.6.2"
-    val navVersion = "2.7.6"
+    val navVersion = "2.7.5"
     implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
     //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
@@ -58,6 +58,8 @@ dependencies {
     //Lifecycle
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    //Coil
+    implementation("io.coil-kt:coil:2.4.0")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

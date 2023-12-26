@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">SevenWindsCoffe</string>
+    <string name="login_title">Вход</string>
+    <string name="login_hint_string">example@example.com</string>
+    <string name="e_mail_title">e-mail</string>
+    <string name="password_textview_title">Пароль</string>
+    <string name="password_hint_string">*******</string>
+    <string name="login_button_text">Войти</string>
+    <string name="registration_button_text_string">Зарегистрироваться</string>
+    <string name="registration_toolbar_title">Регистрация</string>
+    <string name="repeat_password_title">Повторите пароль</string>
+    <string name="error_email">Некорректный e-mail</string>
+    <string name="error_first_pass">Некорректный пароль</string>
+    <string name="error_second_password">Пароль отличается</string>
+    <string name="coffee_shops_toolbar">Ближайшие кофейни</string>
+    <string name="menu_string">Меню</string>
+    <string name="rub_format">%d руб</string>
 </resources>
