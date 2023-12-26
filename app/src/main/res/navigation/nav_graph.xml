@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginScreenFragment">
+
+    <fragment
+        android:id="@+id/loginScreenFragment"
+        android:name="com.sevenwinds.coffeeapp.presentation.login_screen.LoginScreenFragment"
+        android:label="LoginScreenFragment" >
+        <action
+            android:id="@+id/action_loginScreenFragment_to_registrationScreenFragment"
+            app:destination="@id/registrationScreenFragment" />
+        <action
+            android:id="@+id/action_loginScreenFragment_to_coffeeShopsFragment"
+            app:destination="@id/coffeeShopsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationScreenFragment"
+        android:name="com.sevenwinds.coffeeapp.presentation.registration_screen.RegistrationScreenFragment"
+        android:label="RegistrationScreenFragment" >
+        <action
+            android:id="@+id/action_registrationScreenFragment_to_coffeeShopsFragment"
+            app:destination="@id/coffeeShopsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coffeeShopsFragment"
+        android:name="com.sevenwinds.coffeeapp.presentation.cofee_shops_screen.CoffeeShopsFragment"
+        android:label="CoffeeShopsFragment" />
+</navigation>

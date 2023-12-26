@@ -50,7 +50,7 @@ dependencies {
 
     //Fragments
     val fragmentVersion = "1.6.2"
-    val navVersion = "2.7.6"
+    val navVersion = "2.7.5"
     implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
     //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")

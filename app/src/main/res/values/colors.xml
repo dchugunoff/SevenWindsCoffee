@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dark_brown_color">#846340</color>
+    <color name="light_brown_color">#AF9479</color>
+    <color name="brown_button_text_color">#F6E5D1</color>
+    <color name="brown_button_color">#342D1A</color>
+    <color name="brown_background_card_color">#F6E5D1</color>
+    <color name="blue_button_text_color">#014BE4</color>
 </resources>
