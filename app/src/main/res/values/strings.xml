@@ -13,4 +13,6 @@
     <string name="error_first_pass">Некорректный пароль</string>
     <string name="error_second_password">Пароль отличается</string>
     <string name="coffee_shops_toolbar">Ближайшие кофейни</string>
+    <string name="menu_string">Меню</string>
+    <string name="rub_format">%d руб</string>
 </resources>

@@ -1,0 +1,16 @@
+package com.sevenwinds.data.coffee_house_menu.remote
+
+import com.sevenwinds.data.BASE_URL
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
+object CoffeeHouseMenuRetrofitClient {
+
+    val instance: CoffeeHouseMenuApiService by lazy {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        retrofit.create(CoffeeHouseMenuApiService::class.java)
+    }
+}

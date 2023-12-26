@@ -13,7 +13,9 @@
             app:destination="@id/registrationScreenFragment" />
         <action
             android:id="@+id/action_loginScreenFragment_to_coffeeShopsFragment"
-            app:destination="@id/coffeeShopsFragment" />
+            app:destination="@id/coffeeShopsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/registrationScreenFragment"
@@ -21,10 +23,25 @@
         android:label="RegistrationScreenFragment" >
         <action
             android:id="@+id/action_registrationScreenFragment_to_coffeeShopsFragment"
-            app:destination="@id/coffeeShopsFragment" />
+            app:destination="@id/coffeeShopsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/coffeeShopsFragment"
         android:name="com.sevenwinds.coffeeapp.presentation.cofee_shops_screen.CoffeeShopsFragment"
-        android:label="CoffeeShopsFragment" />
+        android:label="CoffeeShopsFragment" >
+        <action
+            android:id="@+id/action_coffeeShopsFragment_to_coffeeHouseMenuFragment"
+            app:destination="@id/coffeeHouseMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coffeeHouseMenuFragment"
+        android:name="com.sevenwinds.coffeeapp.presentation.coffee_house_menu_screen.CoffeeHouseMenuFragment"
+        android:label="CoffeeHouseMenuFragment" >
+        <argument
+            android:name="coffeeHouseID"
+            app:argType="string"
+            android:defaultValue="1" />
+    </fragment>
 </navigation>

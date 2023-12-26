@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.sevenwinds.coffeeapp.databinding.FragmentCoffeeShopsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -37,6 +38,7 @@ class CoffeeShopsFragment: Fragment() {
     }
 
     private fun bindAdapter() {
+        adapter.setNavController(findNavController())
         viewModel.coffeeShopsList.observe(viewLifecycleOwner) {
             binding.coffeeShopsRv.adapter = adapter
             adapter.submitList(it)

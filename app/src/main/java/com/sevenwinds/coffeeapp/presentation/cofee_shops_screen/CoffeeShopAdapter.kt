@@ -2,9 +2,12 @@ package com.sevenwinds.coffeeapp.presentation.cofee_shops_screen
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.sevenwinds.coffeeapp.R
 import com.sevenwinds.coffeeapp.databinding.CardCoffeeShopBinding
 import com.sevenwinds.domain.registration.coffee_shops.CoffeeShopItem
 import javax.inject.Inject
@@ -13,11 +16,21 @@ import javax.inject.Singleton
 @Singleton
 class CoffeeShopAdapter @Inject constructor() :
     ListAdapter<CoffeeShopItem, CoffeeShopAdapter.CoffeeShopViewHolder>(DiffCallback) {
+
+    private lateinit var navController: NavController
+
+    fun setNavController(navController: NavController) {
+        this.navController = navController
+    }
     inner class CoffeeShopViewHolder(private val binding: CardCoffeeShopBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(shop: CoffeeShopItem) {
             with(binding) {
                 nameCoffeeShop.text = shop.name
+                cardCoffeeShop.setOnClickListener {
+                    val bundle = bundleOf("shop_id" to shop.id.toString())
+                    navController.navigate(R.id.action_coffeeShopsFragment_to_coffeeHouseMenuFragment, bundle)
+                }
             }
         }
     }

@@ -1,12 +1,15 @@
 package com.sevenwinds.data.di
 
 import android.content.Context
+import com.sevenwinds.data.coffee_house_menu.remote.CoffeeHouseMenuRetrofitClient
+import com.sevenwinds.data.coffee_house_menu.repository.CoffeeHouseMenuRepositoryImpl
 import com.sevenwinds.data.coffee_shops.remote.CoffeeShopsRetrofitClient
 import com.sevenwinds.data.coffee_shops.repository.CoffeeShopsRepositoryImpl
 import com.sevenwinds.data.registration.remote.AuthorizationRetrofitClient
 import com.sevenwinds.data.registration.repository.AuthorizationRepositoryImpl
 import com.sevenwinds.data.utils.SharedPreferencesHelper
 import com.sevenwinds.domain.registration.AuthorizationRepository
+import com.sevenwinds.domain.registration.CoffeeHouseMenuRepository
 import com.sevenwinds.domain.registration.CoffeeShopsRepository
 import dagger.Module
 import dagger.Provides
@@ -35,5 +38,11 @@ object DataModule {
     @Provides
     fun provideCoffeeShopsRepository(): CoffeeShopsRepository {
         return CoffeeShopsRepositoryImpl(CoffeeShopsRetrofitClient)
+    }
+
+    @Singleton
+    @Provides
+    fun provideCoffeeHouseMenuRepository(): CoffeeHouseMenuRepository {
+        return CoffeeHouseMenuRepositoryImpl(CoffeeHouseMenuRetrofitClient)
     }
 }
