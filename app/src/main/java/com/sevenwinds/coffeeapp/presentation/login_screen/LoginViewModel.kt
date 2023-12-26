@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.sevenwinds.coffeeapp.presentation.utils.ErrorResponse
 import com.sevenwinds.coffeeapp.presentation.utils.ResultState
 import com.sevenwinds.coffeeapp.presentation.utils.SuccessResponse
+import com.sevenwinds.data.utils.SharedPreferencesHelper
 import com.sevenwinds.domain.registration.AuthorizationRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -14,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val repository: AuthorizationRepository
+    private val repository: AuthorizationRepository,
+    private val sharedPreferencesHelper: SharedPreferencesHelper
 ) : ViewModel() {
 
 
@@ -27,6 +29,7 @@ class LoginViewModel @Inject constructor(
                 val token = repository.login(email, password).token
                 if (token != null) {
                     _dataState.value = SuccessResponse
+                    sharedPreferencesHelper.setToken(token)
                 } else {
                     _dataState.value = ErrorResponse
                 }

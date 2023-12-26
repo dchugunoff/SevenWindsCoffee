@@ -12,4 +12,5 @@
     <string name="error_email">Некорректный e-mail</string>
     <string name="error_first_pass">Некорректный пароль</string>
     <string name="error_second_password">Пароль отличается</string>
+    <string name="coffee_shops_toolbar">Ближайшие кофейни</string>
 </resources>
